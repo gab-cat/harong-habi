@@ -147,12 +147,12 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: visible ? "blur(10px)" : "none",
+        backdropFilter: visible ? "blur(4px)" : "none",
         boxShadow: "none",
         width: visible ? "90%" : "100%",
         paddingRight: visible ? "12px" : "0px",
         paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "4px" : "2rem",
+        borderRadius: visible ? "9999px" : "9999px",
         y: visible ? 20 : 0,
       }}
       transition={{
@@ -161,8 +161,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-stone-950/90 backdrop-blur-md border border-amber-800/30 dark:bg-stone-950/90",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 rounded-full lg:hidden",
+        visible && "bg-stone-950/40 backdrop-blur-sm dark:bg-stone-950/40",
         className,
       )}
     >
@@ -201,7 +201,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-stone-950/80 backdrop-blur-sm px-4 py-4 shadow-[0_0_24px_rgba(217,_119,_6,_0.1),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(217,_119,_6,_0.1),_0_0_4px_rgba(217,_119,_6,_0.08),_0_16px_68px_rgba(217,_119,_6,_0.05)]",
             className,
           )}
         >
@@ -220,9 +220,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className="text-amber-100 hover:text-amber-50 transition-colors cursor-pointer" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-amber-100 hover:text-amber-50 transition-colors cursor-pointer" onClick={onClick} />
   );
 };
 

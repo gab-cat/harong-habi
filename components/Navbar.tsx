@@ -93,7 +93,6 @@ const Navbar = () => {
         <MobileNavMenu
           isOpen={isMobileMenuOpen}
           onClose={() => setIsMobileMenuOpen(false)}
-          className="bg-stone-950/95 backdrop-blur-md border border-amber-800/30"
         >
           {navItems.map((item, idx) => (
             <a
