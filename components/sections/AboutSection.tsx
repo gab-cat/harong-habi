@@ -24,7 +24,7 @@ const AboutSection = () => {
             <span className="italic">Accessible to Everyone</span>
           </h2>
 
-          <p className="max-w-3xl text-lg leading-relaxed text-amber-100/80 md:text-xl">
+          <p className="max-w-3xl pt-8 font-normal text-base leading-relaxed text-amber-100/60 md:text-lg">
             Harong Habi was created to help families make smarter, budget-friendly decisions when building or improving their homes. We simplify the entire planning process by recommending the best materials and layout options based on your available budget. Whether you&apos;re a first-time homeowner, planning a community project, or simply need guidance without access to construction experts, we&apos;re here to make decent, safe housing more accessible to everyone.
           </p>
 
