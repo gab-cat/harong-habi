@@ -29,6 +29,7 @@ interface NavItemsProps {
   }[];
   className?: string;
   onItemClick?: () => void;
+  activeSection?: string;
 }
 
 interface MobileNavProps {
@@ -111,7 +112,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, activeSection }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -122,23 +123,41 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         className,
       )}
     >
-      {items.map((item, idx) => (
-        <a
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-amber-100/80 transition-colors hover:text-amber-50 dark:text-amber-100/80 dark:hover:text-amber-50"
-          key={`link-${idx}`}
-          href={item.link}
-        >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-amber-900/30 dark:bg-amber-900/40"
-            />
-          )}
-          <span className="relative z-20">{item.name}</span>
-        </a>
-      ))}
+      {items.map((item, idx) => {
+        const sectionId = item.link.substring(1); // Remove # from link
+        const isActive = activeSection === sectionId;
+        return (
+          <a
+            onMouseEnter={() => setHovered(idx)}
+            onMouseLeave={() => setHovered(null)}
+            onClick={() => {
+              setHovered(null);
+              onItemClick?.();
+            }}
+            className={cn(
+              "relative px-4 py-2 transition-colors focus:outline-none focus:ring-0",
+              isActive
+                ? "text-amber-50 dark:text-amber-50"
+                : "text-amber-100/80 hover:text-amber-50 dark:text-amber-100/80 dark:hover:text-amber-50"
+            )}
+            key={`link-${idx}`}
+            href={item.link}
+          >
+            {(hovered === idx || isActive) && (
+              <motion.div
+                layoutId="hovered"
+                className={cn(
+                  "absolute inset-0 h-full w-full rounded-full",
+                  isActive
+                    ? "bg-amber-500/50 dark:bg-amber-500/60"
+                    : "bg-amber-900/30 dark:bg-amber-900/40"
+                )}
+              />
+            )}
+            <span className="relative z-20">{item.name}</span>
+          </a>
+        );
+      })}
     </motion.div>
   );
 };
