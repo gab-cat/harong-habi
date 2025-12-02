@@ -22,9 +22,10 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://harong-habi.vercel.app"),
   title: "Harong-Habi | Building Smarter, Safer Filipino Homes",
   description:
-    "Empowering Filipino families in building smarter, safer, and more affordable homes. We blend traditional Filipino craftsmanship with modern innovation.",
+    "Empowering Filipino families to build smarter, safer, and more affordable homes. We blend traditional Filipino craftsmanship with modern innovation for sustainable housing solutions.",
   keywords: [
     "Filipino homes",
     "home construction Philippines",
@@ -34,12 +35,30 @@ export const metadata: Metadata = {
     "sustainable homes",
   ],
   authors: [{ name: "Harong-Habi" }],
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", type: "image/x-icon" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "Harong-Habi | Building Smarter, Safer Filipino Homes",
     description:
       "Empowering Filipino families in building smarter, safer, and more affordable homes.",
     type: "website",
     locale: "en_PH",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Harong-Habi - Building Smarter, Safer Filipino Homes",
+      },
+    ],
   },
 };
 

@@ -1,0 +1,33 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#F59E0B"/>
+  
+  <!-- Bahay Kubo silhouette - Traditional high-pitched roof -->
+  <!-- Main roof structure -->
+  <path d="M256 80 L180 180 L332 180 Z" fill="#FCD34D" stroke="#FBBF24" stroke-width="8"/>
+  
+  <!-- Roof detail lines -->
+  <path d="M256 80 L256 180" stroke="#FBBF24" stroke-width="4"/>
+  <path d="M218 130 L294 130" stroke="#FBBF24" stroke-width="3"/>
+  
+  <!-- House body -->
+  <rect x="180" y="180" width="152" height="200" fill="#FBBF24" stroke="#FCD34D" stroke-width="6"/>
+  
+  <!-- Door -->
+  <rect x="220" y="280" width="60" height="100" fill="#F59E0B" stroke="#FCD34D" stroke-width="4"/>
+  <circle cx="270" cy="330" r="4" fill="#FCD34D"/>
+  
+  <!-- Windows -->
+  <rect x="200" y="220" width="40" height="40" fill="#FCD34D" stroke="#F59E0B" stroke-width="3"/>
+  <rect x="272" y="220" width="40" height="40" fill="#FCD34D" stroke="#F59E0B" stroke-width="3"/>
+  
+  <!-- Window cross -->
+  <line x1="220" y1="240" x2="240" y2="240" stroke="#F59E0B" stroke-width="2"/>
+  <line x1="200" y1="220" x2="200" y2="260" stroke="#F59E0B" stroke-width="2"/>
+  <line x1="292" y1="240" x2="312" y2="240" stroke="#F59E0B" stroke-width="2"/>
+  <line x1="272" y1="220" x2="272" y2="260" stroke="#F59E0B" stroke-width="2"/>
+  
+  <!-- Foundation/base -->
+  <rect x="160" y="380" width="192" height="20" fill="#F59E0B" stroke="#FBBF24" stroke-width="4"/>
+</svg>
+
