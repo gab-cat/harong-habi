@@ -86,7 +86,7 @@ const VideoHero = () => {
           <h2 className="font-serif text-3xl font-semibold tracking-tighter text-amber-50 md:text-5xl lg:text-6xl">
             Plan Your Dream Home
             <br />
-            <span className="italic text-amber-300">Within Your Budget</span>
+            <span className="italic tracking-[-0.06em] text-amber-300">Within Your Budget</span>
           </h2>
         </motion.div>
 

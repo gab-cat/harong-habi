@@ -17,11 +17,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", link: "#" },
     { name: "About", link: "#about" },
     { name: "Features", link: "#features" },
     { name: "Services", link: "#services" },
-    { name: "Testimonials", link: "#testimonials" },
     { name: "Contact", link: "#contact" },
   ];
 
