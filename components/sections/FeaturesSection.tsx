@@ -41,7 +41,7 @@ const FeaturesSection = () => {
               key={i}
               title={feature.title}
               description={feature.description}
-              header={<FeatureHeader gradient={feature.gradient} />}
+              header={<FeatureHeader imageUrl={feature.imageUrl} />}
               icon={feature.icon}
               className={`${feature.className} border-amber-800/30 bg-stone-900/50 backdrop-blur-sm hover:border-amber-600/50 hover:bg-stone-800/60`}
             />
@@ -52,10 +52,13 @@ const FeaturesSection = () => {
   );
 };
 
-const FeatureHeader = ({ gradient }: { gradient: string }) => {
+const FeatureHeader = ({ imageUrl }: { imageUrl: string }) => {
   return (
     <div
-      className={`flex h-full min-h-[8rem] w-full items-center justify-center rounded-xl ${gradient}`}
+      className="relative flex h-full min-h-[8rem] w-full items-center justify-center rounded-xl bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${imageUrl})`,
+      }}
     >
       <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-stone-900/80 to-transparent" />
     </div>
@@ -70,7 +73,7 @@ const features = [
     icon: (
       <IconCoin className="h-5 w-5 text-amber-400" aria-hidden="true" />
     ),
-    gradient: "bg-gradient-to-br from-green-600/40 to-amber-700/40",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     className: "md:col-span-2",
   },
   {
@@ -80,7 +83,7 @@ const features = [
     icon: (
       <IconHome className="h-5 w-5 text-amber-400" aria-hidden="true" />
     ),
-    gradient: "bg-gradient-to-br from-amber-600/40 to-orange-800/40",
+    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     className: "md:col-span-1",
   },
   {
@@ -90,7 +93,7 @@ const features = [
     icon: (
       <IconUsers className="h-5 w-5 text-amber-400" aria-hidden="true" />
     ),
-    gradient: "bg-gradient-to-br from-blue-600/40 to-indigo-800/40",
+    imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
     className: "md:col-span-1",
   },
   {
@@ -100,7 +103,7 @@ const features = [
     icon: (
       <IconShield className="h-5 w-5 text-amber-400" aria-hidden="true" />
     ),
-    gradient: "bg-gradient-to-br from-red-600/40 to-amber-800/40",
+    imageUrl: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
     className: "md:col-span-2",
   },
   {
@@ -110,7 +113,7 @@ const features = [
     icon: (
       <IconShield className="h-5 w-5 text-amber-400" aria-hidden="true" />
     ),
-    gradient: "bg-gradient-to-br from-emerald-600/40 to-teal-800/40",
+    imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     className: "md:col-span-1",
   },
   {
@@ -120,7 +123,7 @@ const features = [
     icon: (
       <IconHeart className="h-5 w-5 text-amber-400" aria-hidden="true" />
     ),
-    gradient: "bg-gradient-to-br from-rose-600/40 to-amber-700/40",
+    imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
     className: "md:col-span-2",
   },
 ];
